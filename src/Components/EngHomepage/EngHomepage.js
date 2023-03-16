@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import './Homepage.css';
 import './Homepage_Nav.css';
-import {AiFillHome} from 'react-icons/ai';
+import {AiFillHome, AiFillGithub} from 'react-icons/ai';
 import {FaScroll, FaLaptopCode} from 'react-icons/fa';
 import {IoSchool, IoReorderThreeOutline} from 'react-icons/io5';
 import {MdEmail} from 'react-icons/md';
@@ -12,6 +12,16 @@ import Button from 'react-bootstrap/Button';
 function Homepage() {
 
     const [menuClicked, setMenuClicked] = useState(false);
+    let menuRef = useRef();
+    
+    useEffect(() => {
+        let handler = (e) => {
+            if(!menuRef.current.contains(e.target)) {
+                setMenuClicked(false);
+            }
+        }
+        document.addEventListener("mousedown", handler);
+    })
 
     const handleClickScroll = (id) => {
         const element = document.getElementById(id);
@@ -23,14 +33,17 @@ function Homepage() {
     const menuClick = (e) => {
         if(menuClicked) setMenuClicked(false);
         else setMenuClicked(true);
+    }
 
-        console.log(menuClicked);
+    const Submit = (e) => {
+        e.preventDefault();
+        return false;
     }
 
     return ( 
         <div className='main-container d-flex'>
             <Button className='rounded-circle close-btn' onClick={(e) => menuClick(e)}><IoReorderThreeOutline size={35} className={menuClicked?'icon1-clicked':'icon1-notclicked'}></IoReorderThreeOutline><RxCross2 size={35} className={menuClicked?'icon1-notclicked':'icon1-clicked'}></RxCross2></Button>
-            <div className={menuClicked ? 'sidebar pt-4 p-2 d-flex flex-column clicked' : 'sidebar pt-4 p-2 d-flex flex-column'} id='side_nav'>
+            <div className={menuClicked ? 'sidebar pt-4 p-2 d-flex flex-column clicked' : 'sidebar pt-4 p-2 d-flex flex-column'} id='side_nav' ref={menuRef}>
                 <div className='header-box text-center'>
                     <img className='profile-pic img-fluid rounded-circle' src={require('../../Resources/20220327_192932.jpg')}></img>
                     <h1 className='fs-3 text-white'>Aleksandar Butulija</h1>
@@ -38,6 +51,7 @@ function Homepage() {
                 <div className='links-div d-flex flex-column justify-content-between'>
                     <a className='nav-link scrollto' onClick={() => handleClickScroll('home')}><AiFillHome size={20} className='link-icon'></AiFillHome><span className='link-text'>Home</span></a>
                     <a className='nav-link scrollto' onClick={() => handleClickScroll('about')}><FaScroll size={20} className='link-icon'></FaScroll>About</a>
+                    <a className='nav-link' href='https://github.com/acabutulija' target={'_blank'}><AiFillGithub size={20} className='link-icon'></AiFillGithub>Github</a>
                     <a className='nav-link scrollto' onClick={() => handleClickScroll('education')}><IoSchool size={20} className='link-icon'></IoSchool>Education</a>
                     <a className='nav-link scrollto' onClick={() => handleClickScroll('skills')}><FaLaptopCode size={20} className='link-icon'></FaLaptopCode>Skills</a>
                     <a className='nav-link scrollto' onClick={() => handleClickScroll('contact')}><MdEmail size={20} className='link-icon'></MdEmail>Contact</a>
@@ -150,7 +164,7 @@ function Homepage() {
                 </div>
 
                 <div className="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                    <form action="" method="post" role="form" className="php-email-form">
+                    <form action="" method="post" role="form" onSubmit={e => Submit(e)} className="php-email-form">
                     <div className="row">
                         <div className="form-group col-md-6">
                         <label htmlFor="name">Your name</label>
