@@ -8,12 +8,18 @@ import {MdEmail} from 'react-icons/md';
 import {RxCross2} from 'react-icons/rx';
 import Typed from 'react-typed';
 import Button from 'react-bootstrap/Button';
+import emailjs from '@emailjs/browser';
 
 function Homepage() {
 
     const [menuClicked, setMenuClicked] = useState(false);
     let menuRef = useRef();
-    
+    const form = useRef();
+    const imeRef = useRef();
+    const emailRef = useRef();
+    const messageRef = useRef();
+
+
     useEffect(() => {
         let handler = (e) => {
             if(!menuRef.current.contains(e.target)) {
@@ -37,7 +43,18 @@ function Homepage() {
 
     const Submit = (e) => {
         e.preventDefault();
-        return false;
+        emailjs.sendForm('service_a05v5pd', 'template_cfl2m79', form.current, 'R1zoSGiKCsjp3Msez')
+        .then((result) => {
+            alert("Email poslat.");
+        }, (error) => {
+          console.log(error.text);
+         });
+
+        imeRef.current.value = '';
+        emailRef.current.value = '';
+        messageRef.current.value = '';
+
+        return true;
     }
 
     return ( 
@@ -145,7 +162,7 @@ function Homepage() {
                     <div className="address">
                         <i className="bi bi-geo-alt"></i>
                         <h4>Location:</h4>
-                        <p>Beograd, 11000</p>
+                        <p>Beograd, 11070</p>
                     </div>
 
                     <div className="email">
@@ -157,31 +174,31 @@ function Homepage() {
                     <div className="phone">
                         <i className="bi bi-phone"></i>
                         <h4>Phone:</h4>
-                        <p>+1 5589 55488 55s</p>
+                        <p>+381 66 434 164</p>
                     </div>
                     </div>
 
                 </div>
 
                 <div className="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                    <form action="" method="post" role="form" onSubmit={e => Submit(e)} className="php-email-form">
+                <form action="" method="post" role="form" ref={form} onSubmit={e => Submit(e)} className="php-email-form">
                     <div className="row">
                         <div className="form-group col-md-6">
-                        <label htmlFor="name">Your name</label>
-                        <input type="text" name="name" className="form-control" id="name" required/>
+                        <label htmlFor="user_name">Your name</label>
+                        <input type="text" name="user_name" ref={imeRef} className="form-control" id="name" required/>
                         </div>
                         <div className="form-group col-md-6">
-                        <label htmlFor="name">Your email</label>
-                        <input type="email" className="form-control" name="email" id="email" required/>
+                        <label htmlFor="user_email">Your email</label>
+                        <input type="email" className="form-control" ref={emailRef} name="user_email" id="email" required/>
                         </div>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="name">Subject</label>
+                    {/* <div className="form-group">
+                        <label htmlFor="name">Tema</label>
                         <input type="text" className="form-control" name="subject" id="subject" required/>
-                    </div>
+                    </div> */}
                     <div className="form-group">
-                        <label htmlFor="name">Message</label>
-                        <textarea className="form-control" name="message" rows="10" required></textarea>
+                        <label htmlFor="message">Message</label>
+                        <textarea className="form-control" name="message" ref={messageRef} rows="10" required></textarea>
                     </div>
                     <div className="text-center"><button type="submit">Send</button></div>
                     </form>
