@@ -34,6 +34,7 @@ function Homepage() {
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
+        menuClick();
     };
 
     const menuClick = (e) => {
@@ -80,18 +81,27 @@ function Homepage() {
                 <section id='home' className='d-flex flex-column justify-content-center align-items-left'>
                     <div className='home-text d-flex flex-column'>
                         <span className='fs-1 title-name'>Aleksandar Butulija</span>
-                        <Typed strings={['programming', 'programmer']} typeSpeed={150} backDelay={500} backSpeed={100} loop className='fs-3 subtitle-name'/>
+                        <Typed strings={['Student at FON', 'Programmer', 'Hire me!']} typeSpeed={150} backDelay={500} backSpeed={100} loop className='fs-3 subtitle-name'/>
                     </div>
                 </section>
                 <section id='about'>
                     <h2 className='fs-2 title'>About me</h2>
-                    <p className='text'>I am highly interested in programming and development of web, desktop applications and artificial intelligence. I am very competitive and I like to compete and thus acquire new knowledge in various fields of programming. I plan to continue working in this business and working on developing technologies.</p>
-                    <p className='text'>I am social and communicative, I enjoy in working with other people.</p>
+                    <p className='text'>My name is Aleksandar, I am a student at Faculty of organizational sciences, University of Belgrade. I am majoring information systems and technologies. After I graduate my title will be graduate engineer of information systems.</p>
+                    <p className='text'>I do programming, web and desktop development. I am competitive, always ready to learn new skills and gather new experiences.</p>
+                    <p className='text'>I participated in many projects regarding web development and case studies. One of my achievements are awards from programming competition called Hakaton ogranizied by FONIS student organization.</p>
+                    <p className='text'>I am very communicative and I enjoy working in a team. I am actively looking for a job in my field of work.</p>
                 </section>
                 <section id='education'>
                     <h2 className='fs-2 title'>Education</h2>
                     <div className='row'>
                         <div className='col-md-6'>
+                        <h2 className='fs-3 subtitle'>Fakultet</h2>
+                            <div className='education-div'>
+                                <h4>Faculty of organizational sciences, University of Belgrade</h4>
+                                <h5 className='fs-6 year'>2023 - 2027</h5>
+                                <p className='text education-text'>Regular student majoring information systems and technologies.</p>
+                                <p className='text education-text'>The Faculty of Organizational Sciences is the leading faculty in Serbia in the field of information systems and technologies, organization and management, which works as part of the University of Belgrade. The program orientation of the Faculty reflects contemporary trends in higher education, scientific research and economic development, while for more than a decade it has been the leading faculty in Southeast Europe for education in the field of information systems and technology, management, operational management and quality management.</p>
+                            </div>
                         <h2 className='fs-3 subtitle'>High School</h2>
                         <div className='education-div'>
                             <h4>THIRD BELGRADE GYMNASIUM - IT CLASS</h4>
@@ -106,13 +116,14 @@ function Homepage() {
                             <h4>SYSTEM PRO</h4>
                             <h5 className='fs-6 year'>2017 - 2022</h5>
                             <p className='text education-text'>SystemPro is the first and oldest programming school for children in Belgrade and Serbia (founded in 2002) with a long and successful tradition of educating future programmers.</p>
+                            <p className='text education-text'>It was my stepping stone for the world of software engineering.</p>
                             </div>
                         </div>
                     </div>
                 </section>
                 <section id='skills'>
                     <h2 className='fs-2 title'>Skills</h2>
-                    <p className='text'>I know a large number of programming languages and tools. Below you can see how confident I am in individual technologies.</p>
+                    <p className='text'>I know a large number of programming languages and tools. Below you can see how confident I am in individual technologies. Please, check out my projects on my <a href='https://github.com/acabutulija'>Github</a> profile.</p>
                     <div className='row skills-divs'>
                         <div className='col-md-6'>
                             <div className='skill-div'>

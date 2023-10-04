@@ -33,6 +33,7 @@ function Homepage() {
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
+        menuClick();
     };
 
     const menuClick = (e) => {
@@ -79,39 +80,49 @@ function Homepage() {
                 <section id='home' className='d-flex flex-column justify-content-center align-items-left'>
                     <div className='home-text d-flex flex-column'>
                         <span className='fs-1 title-name'>Aleksandar Butulija</span>
-                        <Typed strings={['programator', 'programer']} typeSpeed={150} backDelay={500} backSpeed={100} loop className='fs-3 subtitle-name'/>
+                        <Typed strings={['Student FON-a', 'Programer', 'Zaposli me!']} typeSpeed={150} backDelay={500} backSpeed={100} loop className='fs-3 subtitle-name'/>
                     </div>
                 </section>
                 <section id='about'>
                     <h2 className='fs-2 title'>O Meni</h2>
-                    <p className='text'>Veoma sam zainteresovan za programiranje i razvoj web, desktop aplikacija i veštačke inteligencije. Veoma sam kompetativan i volim da se takmičim i tako stičem nova znanja iz raznih oblasti programiranja. Planiram da nastavim da se bavim ovim poslom i da radim na razvoju tehnologija.</p>
-                    <p className='text'>Veoma sam druželjubiv i komunikativan, uživam u radu sa drugim ljudima.</p>
+                    <p className='text'>Moje ime je Aleksandar, ja sam student na Fakultetu organizacionih nauka, Univerziteta u Beogradu. Pohadjam smer Informacioni sistemi i Tehnologije. Posle studija moje zvanje će biti diplomirani inženjer informacionih sistema.</p>
+                    <p className='text'>Bavim se programiranjem i razvojem web i desktop aplikacija. Veoma sam kompetativan, uvek spreman za sticanje novih veština i iskustava.</p>
+                    <p className='text'>Učestvovao sam na brojnim projektima u svetu web razvoja i studije slučaja. Neka od mojih dostignuća su rezulatiti na programerskom takamičenju Hakaton pod potkrićem FONIS studentske organizacije.</p>
+                    <p className='text'>Veoma sam komunikativan i uživam u radu sa drugim ljudima. Tražim posao u struci.</p>
                 </section>
                 <section id='education'>
                     <h2 className='fs-2 title'>Edukacija</h2>
                     <div className='row'>
                         <div className='col-md-6'>
-                        <h2 className='fs-3 subtitle'>Srednja škola</h2>
-                        <div className='education-div'>
-                            <h4>TREĆA BEOGRADSKA GIMNAZIJA - IT SMER</h4>
-                            <h5 className='fs-6 year'>2019 - 2023</h5>
-                            <p className='text education-text'>Učenici se u ovoj gimnaziji obrazuju u tri odeljenja: prirodno-matematičkom, društveno-jezičkom i IT smeru. Program se sastoji od obaveznih predmeta poput srpskog jezika, istorije, matematike i fizike, kao i izbornih predmeta koji se razlikuju u zavisnosti od smera.</p>
-                            <p className='text education-text'>Uz redovnu nastavu, učenici imaju priliku da učestvuju u raznim interesantnim aktivnostima i projektima, poput debatnog kluba, olimpijade iz matematike, programiranja, kreativnog pisanja, dramske sekcije i drugih. Takođe, škola ima dobru saradnju sa stranim školama i organizacijama, što omogućava učenicima da stiču internacionalno iskustvo i usavršavaju znanje stranih jezika.</p>
+                            <h2 className='fs-3 subtitle'>Fakultet</h2>
+                            <div className='education-div'>
+                                <h4>Fakultet organizacionih nauka, Univerzitet u Beogradu</h4>
+                                <h5 className='fs-6 year'>2023 - 2027</h5>
+                                <p className='text education-text'>Redovan student na smeru Informacioni Sistemi i Tehnologije.</p>
+                                <p className='text education-text'>Fakultet organizacionih nauka je vodeći fakultet u Srbiji u oblasti informacionih sistema i tehnologija, organizacije i menadžmenta koji radi u sklopu Univerziteta u Beogradu. Programska orijentacija Fakulteta odražava savremene trendove visokog obrazovanja, naučnoistraživačkog rada i privrednog razvoja, dok je već više od jedne decenije vodeći fakultet u jugoistočnoj Evropi za obrazovanje u oblasti informacionih sistema i tehnologije, menadžmenta, operacionog menadžmenta i upravljanja kvalitetom.</p>
+                            </div>
+                            <h2 className='fs-3 subtitle'>Srednja škola</h2>
+                            <div className='education-div'>
+                                <h4>TREĆA BEOGRADSKA GIMNAZIJA - IT SMER</h4>
+                                <h5 className='fs-6 year'>2019 - 2023</h5>
+                                <p className='text education-text'>Učenici se u ovoj gimnaziji obrazuju u tri odeljenja: prirodno-matematičkom, društveno-jezičkom i IT smeru. Program se sastoji od obaveznih predmeta poput srpskog jezika, istorije, matematike i fizike, kao i izbornih predmeta koji se razlikuju u zavisnosti od smera.</p>
+                                <p className='text education-text'>Uz redovnu nastavu, učenici imaju priliku da učestvuju u raznim interesantnim aktivnostima i projektima, poput debatnog kluba, olimpijade iz matematike, programiranja, kreativnog pisanja, dramske sekcije i drugih. Takođe, škola ima dobru saradnju sa stranim školama i organizacijama, što omogućava učenicima da stiču internacionalno iskustvo i usavršavaju znanje stranih jezika.</p>
                             </div>
                         </div>
                         <div className='col-md-6'>
-                        <h2 className='fs-3 subtitle'>Škola Programiranja</h2>
-                        <div className='education-div'>
-                            <h4>SYSTEM PRO</h4>
-                            <h5 className='fs-6 year'>2017 - 2022</h5>
-                            <p className='text education-text'>SystemPro je prva i najstarija škola programiranja za decu u Beogradu i Srbiji (osnovana 2002.) sa dugom i uspešnom tradicijom obrazovanja budućih programera.</p>
+                            <h2 className='fs-3 subtitle'>Škola Programiranja</h2>
+                            <div className='education-div'>
+                                <h4>SYSTEM PRO</h4>
+                                <h5 className='fs-6 year'>2017 - 2022</h5>
+                                <p className='text education-text'>SystemPro je prva i najstarija škola programiranja za decu u Beogradu i Srbiji (osnovana 2002.) sa dugom i uspešnom tradicijom obrazovanja budućih programera.</p>
+                                <p className='text education-text'> Ona je bila moj kamen temeljac za ulazak u svet softver inženjeringa.</p>
                             </div>
                         </div>
                     </div>
                 </section>
                 <section id='skills'>
                     <h2 className='fs-2 title'>Veštine</h2>
-                    <p className='text'>Poznajem veliki broj programskih jezika i alata. Dole možete videti koliko sam pouzdan u pojedinacnim tehnologijama.</p>
+                    <p className='text'>Poznajem veliki broj programskih jezika i alata. Dole možete videti koliko sam pouzdan u pojedinacnim tehnologijama. Moje radove možete videti na mojoj <a href='https://github.com/acabutulija'>Github</a> stranici.</p>
                     <div className='row skills-divs'>
                         <div className='col-md-6'>
                             <div className='skill-div'>
