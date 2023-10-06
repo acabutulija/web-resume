@@ -74,7 +74,7 @@ function Homepage() {
                     <a className='nav-link scrollto' onClick={() => handleClickScroll('skills')}><FaLaptopCode size={20} className='link-icon'></FaLaptopCode>Skills</a>
                     <a className='nav-link scrollto' onClick={() => handleClickScroll('contact')}><MdEmail size={20} className='link-icon'></MdEmail>Contact</a>
                 </div>
-                <div className='lang-div'><span><a className='lang-link' href='/rs'>SRB</a> / <a className='lang-link current' href='/en'>ENG</a></span></div>
+                {/* <div className='lang-div'><span><a className='lang-link current' href='/en'>ENG</a> / <a className='lang-link' href='/rs'>SRB</a></span></div> */}
             </div>
             <div className='fake-element'></div>
             <div className='content'>
@@ -95,19 +95,19 @@ function Homepage() {
                     <h2 className='fs-2 title'>Education</h2>
                     <div className='row'>
                         <div className='col-md-6'>
-                        <h2 className='fs-3 subtitle'>Fakultet</h2>
+                        <h2 className='fs-3 subtitle'>Faculty</h2>
                             <div className='education-div'>
                                 <h4>Faculty of organizational sciences, University of Belgrade</h4>
                                 <h5 className='fs-6 year'>2023 - 2027</h5>
                                 <p className='text education-text'>Regular student majoring information systems and technologies.</p>
-                                <p className='text education-text'>The Faculty of Organizational Sciences is the leading faculty in Serbia in the field of information systems and technologies, organization and management, which works as part of the University of Belgrade. The program orientation of the Faculty reflects contemporary trends in higher education, scientific research and economic development, while for more than a decade it has been the leading faculty in Southeast Europe for education in the field of information systems and technology, management, operational management and quality management.</p>
+                                <p className='text education-text'>Active in different student organizations in fields of engineering and management.</p>
                             </div>
                         <h2 className='fs-3 subtitle'>High School</h2>
                         <div className='education-div'>
                             <h4>THIRD BELGRADE GYMNASIUM - IT CLASS</h4>
                             <h5 className='fs-6 year'>2019 - 2023</h5>
-                            <p className='text education-text'>Students in this high school are educated in three departments: natural-mathematical, social-linguistic and IT. The program consists of compulsory subjects such as Serbian language, history, mathematics and physics, as well as optional subjects that differ depending on the major.</p>
-                            <p className='text education-text'>Along with regular classes, students have the opportunity to participate in various interesting activities and projects, such as debate club, math Olympiad, programming, creative writing, drama section and others. Also, the school has good cooperation with foreign schools and organizations, which enables students to gain international experience and improve their knowledge of foreign languages.</p>
+                            <p className='text education-text'>First generation of students to complete 4 year study program that is specialized for those talented in IT sciences.</p>
+                            <p className='text education-text'>During the studies we had an opportunity to learn to program in C++, C#, Java and to get experiences in the field of Web and App development.</p>
                             </div>
                         </div>
                         <div className='col-md-6'>
