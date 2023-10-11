@@ -14,6 +14,7 @@ function Homepage() {
 
     const [menuClicked, setMenuClicked] = useState(false);
     let menuRef = useRef();
+    let clsBtnRef = useRef();
     const form = useRef();
     const imeRef = useRef();
     const emailRef = useRef();
@@ -22,7 +23,7 @@ function Homepage() {
 
     useEffect(() => {
         let handler = (e) => {
-            if(!menuRef.current.contains(e.target)) {
+            if(!menuRef.current.contains(e.target) && !clsBtnRef.current.contains(e.target)) {
                 setMenuClicked(false);
             }
         }
@@ -60,7 +61,7 @@ function Homepage() {
 
     return ( 
         <div className='main-container d-flex'>
-            <Button className='rounded-circle close-btn' onClick={(e) => menuClick(e)}><IoReorderThreeOutline size={35} className={menuClicked?'icon1-clicked':'icon1-notclicked'}></IoReorderThreeOutline><RxCross2 size={35} className={menuClicked?'icon1-notclicked':'icon1-clicked'}></RxCross2></Button>
+            <Button className='rounded-circle close-btn' ref={clsBtnRef} onClick={(e) => menuClick(e)}><IoReorderThreeOutline size={35} className={menuClicked?'icon1-clicked':'icon1-notclicked'}></IoReorderThreeOutline><RxCross2 size={35} className={menuClicked?'icon1-notclicked':'icon1-clicked'}></RxCross2></Button>
             <div className={menuClicked ? 'sidebar pt-4 p-2 d-flex flex-column clicked' : 'sidebar pt-4 p-2 d-flex flex-column'} id='side_nav' ref={menuRef}>
                 <div className='header-box text-center'>
                     <img className='profile-pic img-fluid rounded-circle' src={require('../../Resources/20220327_192932.jpg')}></img>
@@ -81,7 +82,7 @@ function Homepage() {
                 <section id='home' className='d-flex flex-column justify-content-center align-items-left'>
                     <div className='home-text d-flex flex-column'>
                         <span className='fs-1 title-name'>Aleksandar Butulija</span>
-                        <Typed strings={['Student at FON', 'Programmer', 'Hire me!']} typeSpeed={150} backDelay={500} backSpeed={100} loop className='fs-3 subtitle-name'/>
+                        <Typed strings={['Full-stack developer', 'C# app developer', 'Java programmer', 'Hire me!']} typeSpeed={150} backDelay={500} backSpeed={100} loop className='fs-3 subtitle-name'/>
                     </div>
                 </section>
                 <section id='about'>
@@ -125,8 +126,8 @@ function Homepage() {
                     <h2 className='fs-2 title'>Skills</h2>
                     <p className='text'>I know a large number of programming languages and tools. Below you can see how confident I am in individual technologies. Please, check out my projects on my <a href='https://github.com/acabutulija'>Github</a> profile.</p>
                     <div className='row skills-divs'>
-                        <div className='col-md-6'>
-                            <div className='skill-div'>
+                        <div className='col-sm-4'>
+                            {/* <div className='skill-div'>
                                 <h5 className='tech'>HTML<span className='percentage'>100%</span></h5>
                                 <div className='bar'><div className='bar-mini p100'></div></div>
                             </div>
@@ -141,10 +142,16 @@ function Homepage() {
                             <div className='skill-div'>
                                 <h5 className='tech'>SPRING BOOT<span className='percentage'>80%</span></h5>
                                 <div className='bar'><div className='bar-mini p80'></div></div>
+                            </div> */}
+                            <div className='card border-primary'>
+                                <img className='card-img-top'/>
+                                <div className='card-body'>
+                                    <h5 className='card-title'>React JS/TS</h5>
+                                </div>
                             </div>
                         </div>
-                        <div className='col-md-6'>
-                            <div className='skill-div'>
+                        <div className='col-sm-4'>
+                            {/* <div className='skill-div'>
                                 <h5 className='tech'>C++<span className='percentage'>90%</span></h5>
                                 <div className='bar'><div className='bar-mini p90'></div></div>
                             </div>
@@ -159,7 +166,10 @@ function Homepage() {
                             <div className='skill-div'>
                                 <h5 className='tech'>SQL<span className='percentage'>70%</span></h5>
                                 <div className='bar'><div className='bar-mini p70'></div></div>
-                            </div>
+                            </div> */}
+                        </div>
+                        <div className='col-sm-4'>
+
                         </div>
                     </div>
                 </section>
@@ -168,28 +178,6 @@ function Homepage() {
                     <p className='text'>Feel free to contact me!</p>
                     
                     <div className="row" data-aos="fade-in">
-                <div className="col-lg-5 d-flex align-items-stretch">
-                    <div className="info">
-                    <div className="address">
-                        <i className="bi bi-geo-alt"></i>
-                        <h4>Location:</h4>
-                        <p>Beograd, 11070</p>
-                    </div>
-
-                    <div className="email">
-                        <i className="bi bi-envelope"></i>
-                        <h4>Email:</h4>
-                        <p>aca.butulija@gmail.com</p>
-                    </div>
-
-                    <div className="phone">
-                        <i className="bi bi-phone"></i>
-                        <h4>Phone:</h4>
-                        <p>+381 66 434 164</p>
-                    </div>
-                    </div>
-
-                </div>
 
                 <div className="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
                 <form action="" method="post" role="form" ref={form} onSubmit={e => Submit(e)} className="php-email-form">
@@ -213,6 +201,29 @@ function Homepage() {
                     </div>
                     <div className="text-center"><button type="submit">Send</button></div>
                     </form>
+                </div>
+
+                <div className="col-lg-5 d-flex align-items-stretch">
+                    <div className="info">
+                    {/* <div className="address">
+                        <i className="bi bi-geo-alt"></i>
+                        <h4>Location:</h4>
+                        <p>Beograd, 11070</p>
+                    </div> */}
+
+                    <div className="email">
+                        <i className="bi bi-envelope"></i>
+                        <h4>Email:</h4>
+                        <p>aca.butulija@gmail.com</p>
+                    </div>
+
+                    <div className="phone">
+                        <i className="bi bi-phone"></i>
+                        <h4>Phone:</h4>
+                        <p>+381 66 434 164</p>
+                    </div>
+                    </div>
+
                 </div>
 
                 </div>
